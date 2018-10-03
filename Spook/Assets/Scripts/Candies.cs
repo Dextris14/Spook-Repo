@@ -25,11 +25,10 @@ public class Candies : MonoBehaviour {
         {
             CandyCount++;
             Destroy(collision.gameObject);
-        }
-
-        if(CandyCount >=10)
-        {
-            Pumpkin.SetActive(true);
+            if (CandyCount >= 10)
+            {
+                Pumpkin.SetActive(true);
+            }
         }
 
         if(collision.gameObject.tag == "Pumpkin")
