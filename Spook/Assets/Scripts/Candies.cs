@@ -16,7 +16,7 @@ public class Candies : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        CandyCounter.text = "" + CandyCount;
+        CandyCounter.text = CandyCount + "/10";
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)

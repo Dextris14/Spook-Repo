@@ -3,39 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
-    public GameObject Player;
-    public float chaseSpeed = 5f;
-    public float chaseTriggerDistance = 7f;
-    Vector3 startPosition;
-    bool home = true;
-    public Vector3 paceDirection = new Vector3(0, 0, 0);
-    public float paceDistance = 3f;
-    public float paceSpeed = 2f;
+    public Vector3 Relation = new Vector3();
+    public float moveSpeed = 1f;
+    public int Type;
 	// Use this for initialization
 	void Start () {
-        Player = GameObject.FindGameObjectWithTag("Player");
-        startPosition = transform.position;
-	}
+        if(Type == 1)
+        {
+            moveSpeed = 4;
+        }
+        if (Type == 2)
+        {
+            moveSpeed = 5;
+        }
+        if (Type == 3)
+        {
+            moveSpeed = 2;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 playerPosition = Player.transform.position;
-        Vector3 chaseDirection = playerPosition - transform.position;
-        if(chaseDirection.magnitude < chaseTriggerDistance)
+        if(Type == 1)
         {
-            home = false;
-            chaseDirection.Normalize();
-            GetComponent<Rigidbody2D>().velocity = chaseDirection * chaseSpeed;
+            Vector3 PlayerPosition = new Vector3(GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().position.x, GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().position.y, 0);
+            Vector3 Relation = PlayerPosition - transform.position;
+            GetComponent<Rigidbody2D>().velocity = Relation.normalized * moveSpeed;
         }
-        else if(home == false)
+        if (Type == 2)
         {
-            Vector3 homeDirection = startPosition - transform.position;
-            if(homeDirection.magnitude < .1f)
-            {
-                home = true;
-                transform.position = startPosition;
-                GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
-            }
+            Vector3 PlayerPosition = new Vector3(GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().position.x, GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().position.y, 0);
+            Vector3 Relation = PlayerPosition.normalized - transform.position.normalized;
+            GetComponent<Rigidbody2D>().velocity = Relation * moveSpeed;
         }
-	}
+        if (Type == 3)
+        {
+            Vector3 PlayerPosition = new Vector3(GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().position.x, GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().position.y, 0);
+            Vector3 Relation = PlayerPosition - transform.position.normalized;
+            GetComponent<Rigidbody2D>().velocity = Relation * moveSpeed;
+        }
+    }
 }
