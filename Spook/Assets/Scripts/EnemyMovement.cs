@@ -39,11 +39,11 @@ public class EnemyMovement : MonoBehaviour {
         if (Type == 2)
         {
             Timer += Time.deltaTime;
-            if (Timer > 1.2)
+            if (Timer > .9)
             {
                 Vector2 Relation = Player.GetComponent<Rigidbody2D>().position - GetComponent<Rigidbody2D>().position;
                 GetComponent<Rigidbody2D>().velocity = Relation.normalized * moveSpeed;
-                if (Timer > 1.3)
+                if (Timer > 1)
                 {
                     Timer = 0;
                     GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
