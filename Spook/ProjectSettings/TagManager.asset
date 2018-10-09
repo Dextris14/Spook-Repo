@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Candy
   - Pumpkin
+  - Enemy
   layers:
   - Default
   - TransparentFX
