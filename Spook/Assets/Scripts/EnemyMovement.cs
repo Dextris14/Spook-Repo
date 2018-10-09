@@ -15,10 +15,6 @@ public class EnemyMovement : MonoBehaviour {
         {
             moveSpeed = 4;
         }
-        if (Type == 4)
-        {
-            moveSpeed = 5;
-        }
         if (Type == 2)
         {
             moveSpeed = 40;
@@ -26,6 +22,10 @@ public class EnemyMovement : MonoBehaviour {
         if (Type == 3)
         {
             moveSpeed = 25;
+        }
+        if (Type == 4)
+        {
+            moveSpeed = 7;
         }
     }
 	

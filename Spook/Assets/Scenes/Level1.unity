@@ -10888,6 +10888,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114245213483155240, guid: cf520bbbb8d1f1f4f9d50b59d10b6f93,
+        type: 2}
+      propertyPath: HealthVisual
+      value: 
+      objectReference: {fileID: 718455488}
+    - target: {fileID: 114245213483155240, guid: cf520bbbb8d1f1f4f9d50b59d10b6f93,
+        type: 2}
+      propertyPath: HealthBar
+      value: 
+      objectReference: {fileID: 1697084034}
     - target: {fileID: 114744452399183902, guid: cf520bbbb8d1f1f4f9d50b59d10b6f93,
         type: 2}
       propertyPath: CandyCounter
@@ -10903,16 +10913,6 @@ Prefab:
       propertyPath: Transition
       value: 
       objectReference: {fileID: 1136917990}
-    - target: {fileID: 114245213483155240, guid: cf520bbbb8d1f1f4f9d50b59d10b6f93,
-        type: 2}
-      propertyPath: HealthVisual
-      value: 
-      objectReference: {fileID: 718455488}
-    - target: {fileID: 114245213483155240, guid: cf520bbbb8d1f1f4f9d50b59d10b6f93,
-        type: 2}
-      propertyPath: HealthBar
-      value: 
-      objectReference: {fileID: 1697084034}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf520bbbb8d1f1f4f9d50b59d10b6f93, type: 2}
   m_IsPrefabAsset: 0
