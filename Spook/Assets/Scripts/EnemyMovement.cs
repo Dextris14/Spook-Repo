@@ -13,7 +13,7 @@ public class EnemyMovement : MonoBehaviour {
         Player = GameObject.FindWithTag("Player");
         if (Type == 1)
         {
-            moveSpeed = 4;
+            moveSpeed = 5;
         }
         if (Type == 2)
         {
@@ -34,7 +34,14 @@ public class EnemyMovement : MonoBehaviour {
         if(Type == 1)
         {
             Vector2 Relation = Player.GetComponent<Rigidbody2D>().position - GetComponent<Rigidbody2D>().position;
-            GetComponent<Rigidbody2D>().velocity = Relation.normalized * moveSpeed;
+            if(Relation.magnitude >15)
+            {
+                GetComponent<Rigidbody2D>().velocity = Relation.normalized * 40;
+            }
+            else
+            {
+                GetComponent<Rigidbody2D>().velocity = Relation.normalized * moveSpeed;
+            }
         }
         if (Type == 2)
         {

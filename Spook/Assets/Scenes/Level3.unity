@@ -8182,6 +8182,11 @@ Prefab:
       propertyPath: Pumpkin
       value: 
       objectReference: {fileID: 1409778358}
+    - target: {fileID: 212435465815330356, guid: 588476fc41ebfa944b2d3ae3e8c3aa38,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 588476fc41ebfa944b2d3ae3e8c3aa38, type: 2}
   m_IsPrefabAsset: 0
