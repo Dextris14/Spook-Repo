@@ -34,7 +34,7 @@ public class Candies : MonoBehaviour {
         if(collision.gameObject.tag == "Pumpkin")
         {
             Transition.SetActive(true);
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
     }
 }

@@ -13,19 +13,19 @@ public class EnemyMovement : MonoBehaviour {
         Player = GameObject.FindWithTag("Player");
         if (Type == 1)
         {
-            moveSpeed = 4;
+            moveSpeed = 5;
         }
         if (Type == 2)
         {
-            moveSpeed = 5;
+            moveSpeed = 40;
         }
         if (Type == 3)
         {
-            moveSpeed = 40;
+            moveSpeed = 25;
         }
         if (Type == 4)
         {
-            moveSpeed = 25;
+            moveSpeed = 7;
         }
     }
 	
@@ -34,28 +34,30 @@ public class EnemyMovement : MonoBehaviour {
         if(Type == 1)
         {
             Vector2 Relation = Player.GetComponent<Rigidbody2D>().position - GetComponent<Rigidbody2D>().position;
-            GetComponent<Rigidbody2D>().velocity = Relation.normalized * moveSpeed;
+            if(Relation.magnitude >15)
+            {
+                GetComponent<Rigidbody2D>().velocity = Relation.normalized * 40;
+            }
+            else
+            {
+                GetComponent<Rigidbody2D>().velocity = Relation.normalized * moveSpeed;
+            }
         }
         if (Type == 2)
         {
-            Vector2 Relation = (Player.GetComponent<Rigidbody2D>().position + Player.GetComponent<Rigidbody2D>().velocity) - GetComponent<Rigidbody2D>().position;
-            GetComponent<Rigidbody2D>().velocity = Relation.normalized * moveSpeed;
-        }
-        if (Type == 3)
-        {
             Timer += Time.deltaTime;
-            if(Timer > 1.2)
+            if (Timer > .9)
             {
                 Vector2 Relation = Player.GetComponent<Rigidbody2D>().position - GetComponent<Rigidbody2D>().position;
                 GetComponent<Rigidbody2D>().velocity = Relation.normalized * moveSpeed;
-                if(Timer >1.3)
+                if (Timer > 1)
                 {
                     Timer = 0;
                     GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 }
             }
         }
-        if (Type == 4)
+        if (Type == 3)
         {
             Timer += Time.deltaTime;
             if (Timer >= 1)
@@ -69,6 +71,11 @@ public class EnemyMovement : MonoBehaviour {
             {
                 GetComponent<Rigidbody2D>().drag = 5;
             }
+        }
+        if (Type == 4)
+        {
+            Vector2 Relation = (Player.GetComponent<Rigidbody2D>().position + Player.GetComponent<Rigidbody2D>().velocity) - GetComponent<Rigidbody2D>().position;
+            GetComponent<Rigidbody2D>().velocity = Relation.normalized * moveSpeed;
         }
     }
 }

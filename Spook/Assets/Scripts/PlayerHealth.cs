@@ -30,4 +30,12 @@ public class PlayerHealth : MonoBehaviour {
             Health = Health - 3;
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Health = Health - 3;
+        }
+    }
 }
