@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour {
     public int Health = 100;
     public Text HealthVisual;
     public Slider HealthBar;
+    public int Level = 0;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,7 +18,22 @@ public class PlayerHealth : MonoBehaviour {
 	void Update () {
 		if(Health <=0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if(Level == 1)
+            {
+                SceneManager.LoadScene("DeathScene1");
+            }
+            if (Level == 2)
+            {
+                SceneManager.LoadScene("DeathScene2");
+            }
+            if (Level == 3)
+            {
+                SceneManager.LoadScene("DeathScene3");
+            }
+            if (Level == 4)
+            {
+                SceneManager.LoadScene("DeathScene4");
+            }
         }
         HealthVisual.GetComponent<Text>().text = Health + "%";
         HealthBar.GetComponent<Slider>().value = Health;

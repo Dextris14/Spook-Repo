@@ -13,7 +13,7 @@ public class EnemyMovement : MonoBehaviour {
         Player = GameObject.FindWithTag("Player");
         if (Type == 1)
         {
-            moveSpeed = 5;
+            moveSpeed = 4;
         }
         if (Type == 2)
         {

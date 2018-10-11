@@ -539,6 +539,11 @@ Prefab:
       propertyPath: HealthVisual
       value: 
       objectReference: {fileID: 1786676492}
+    - target: {fileID: 114245213483155240, guid: cf520bbbb8d1f1f4f9d50b59d10b6f93,
+        type: 2}
+      propertyPath: Level
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf520bbbb8d1f1f4f9d50b59d10b6f93, type: 2}
   m_IsPrefabAsset: 0
@@ -2759,6 +2764,32 @@ Prefab:
         type: 2}
       propertyPath: m_Color.a
       value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 212018364199157400, guid: 7402e8a7fd9915d4790319d62c2f724c,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300006, guid: 11d47d2429b3b2242a193d4a60f6935c,
+        type: 3}
+    - target: {fileID: 61217404050251412, guid: 7402e8a7fd9915d4790319d62c2f724c,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 61217404050251412, guid: 7402e8a7fd9915d4790319d62c2f724c,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61217404050251412, guid: 7402e8a7fd9915d4790319d62c2f724c,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 61217404050251412, guid: 7402e8a7fd9915d4790319d62c2f724c,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7402e8a7fd9915d4790319d62c2f724c, type: 2}
