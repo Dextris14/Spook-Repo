@@ -6,8 +6,8 @@ public class PlayerAnimation : MonoBehaviour
 {
     float x;
     float y;
-    bool LastUp = true;
-    bool LastDown;
+    bool LastUp;
+    bool LastDown = true;
     bool LastRight;
     bool LastLeft;
     // Use this for initialization
