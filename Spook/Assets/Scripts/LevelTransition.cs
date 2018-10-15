@@ -30,6 +30,10 @@ public class LevelTransition : MonoBehaviour {
         }
         if (collision.gameObject.name == "Transition4")
         {
+            SceneManager.LoadScene("Level5");
+        }
+        if (collision.gameObject.name == "Transition5")
+        {
             SceneManager.LoadScene("WinScene");
         }
     }
