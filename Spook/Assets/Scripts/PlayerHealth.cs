@@ -34,6 +34,10 @@ public class PlayerHealth : MonoBehaviour {
             {
                 SceneManager.LoadScene("DeathScene4");
             }
+            if (Level == 5)
+            {
+                SceneManager.LoadScene("DeathScene5");
+            }
         }
         HealthVisual.GetComponent<Text>().text = Health + "%";
         HealthBar.GetComponent<Slider>().value = Health;

@@ -43,6 +43,10 @@ public class MainMenu : MonoBehaviour {
         {
             SceneManager.LoadScene("Level4");
         }
+        if (LevelDied == 5)
+        {
+            SceneManager.LoadScene("Level5");
+        }
     }
 
     public void ReturnToMain()

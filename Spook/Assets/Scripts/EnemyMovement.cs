@@ -27,6 +27,10 @@ public class EnemyMovement : MonoBehaviour {
         {
             moveSpeed = 7;
         }
+        if (Type == 5)
+        {
+            moveSpeed = 4;
+        }
     }
 	
 	// Update is called once per frame
@@ -76,6 +80,12 @@ public class EnemyMovement : MonoBehaviour {
         {
             Vector2 Relation = (Player.GetComponent<Rigidbody2D>().position + Player.GetComponent<Rigidbody2D>().velocity) - GetComponent<Rigidbody2D>().position;
             GetComponent<Rigidbody2D>().velocity = Relation.normalized * moveSpeed;
+        }
+        if (Type == 5)
+        {
+            Vector2 Relation = Player.GetComponent<Rigidbody2D>().position - GetComponent<Rigidbody2D>().position;
+            GetComponent<Rigidbody2D>().velocity = Relation.normalized * moveSpeed;
+            //transform.LookAt(new Vector3(Player.GetComponent<Transform>().position.x, Player.GetComponent<Transform>().position.y, 0), new Vector3(0, 0, 1));
         }
     }
 }
