@@ -8,10 +8,13 @@ public class PlayerHealth : MonoBehaviour {
     public int Health = 100;
     public Text HealthVisual;
     public Slider HealthBar;
+    public Text VenomIndicator;
     public int Level = 0;
+    public float VenomTime;
+    public float VenomDelay;
 	// Use this for initialization
 	void Start () {
-		
+        
 	}
 	
 	// Update is called once per frame
@@ -39,6 +42,25 @@ public class PlayerHealth : MonoBehaviour {
                 SceneManager.LoadScene("DeathScene5");
             }
         }
+        VenomTime -= Time.deltaTime;
+        VenomDelay += Time.deltaTime;
+        if(VenomDelay >= 1.1)
+        {
+            VenomDelay = 0;
+        }
+        if(VenomTime > 0)
+        {
+            VenomIndicator.GetComponent<Text>().enabled = true;
+        }
+        else
+        {
+            VenomIndicator.GetComponent<Text>().enabled = false;
+        }
+        if(VenomTime > 0 && VenomDelay >= 1)
+        {
+            Health -= 1;
+        }
+
         HealthVisual.GetComponent<Text>().text = Health + "%";
         HealthBar.GetComponent<Slider>().value = Health;
 	}
@@ -47,7 +69,11 @@ public class PlayerHealth : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            Health = Health - 3;
+            Health = Health - collision.gameObject.GetComponent<EnemyMovement>().Damage;
+            if(collision.gameObject.GetComponent<EnemyMovement>().Type == 5)
+            {
+                VenomTime = 5;
+            }
         }
     }
 

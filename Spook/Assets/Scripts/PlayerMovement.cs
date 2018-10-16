@@ -16,4 +16,17 @@ public class PlayerMovement : MonoBehaviour {
         Vector2 Direction = new Vector2(x, y);
         GetComponent<Rigidbody2D>().velocity = Direction * Speed;
 	}
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Web")
+        {
+            Speed = 4;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Speed = 10;
+    }
 }
