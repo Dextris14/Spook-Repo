@@ -81,7 +81,7 @@ public class PlayerHealth : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Health = Health - 3;
+            Health = Health - 5;
         }
     }
 }

@@ -23,6 +23,10 @@ public class PlayerMovement : MonoBehaviour {
         {
             Speed = 4;
         }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Speed = 6;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
