@@ -8,6 +8,7 @@ public class Candies : MonoBehaviour {
     public Text CandyCounter;
     public GameObject Pumpkin;
     public GameObject Transition;
+    public int Level;
 	// Use this for initialization
 	void Start () {
         Pumpkin.SetActive(false);
@@ -16,8 +17,27 @@ public class Candies : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        CandyCounter.text = CandyCount + "/10";
-	}
+        if(Level == 1)
+        {
+            CandyCounter.text = CandyCount + "/10";
+        }
+        if (Level == 2)
+        {
+            CandyCounter.text = CandyCount + "/10";
+        }
+        if (Level == 3)
+        {
+            CandyCounter.text = CandyCount + "/10";
+        }
+        if (Level == 4)
+        {
+            CandyCounter.text = CandyCount + "/10";
+        }
+        if (Level == 5)
+        {
+            CandyCounter.text = CandyCount + "/10";
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,7 +45,23 @@ public class Candies : MonoBehaviour {
         {
             CandyCount++;
             Destroy(collision.gameObject);
-            if (CandyCount >= 10)
+            if(Level == 1 && CandyCount >= 10)
+            {
+                Pumpkin.SetActive(true);
+            }
+            if (Level == 2 && CandyCount >= 10)
+            {
+                Pumpkin.SetActive(true);
+            }
+            if (Level == 3 && CandyCount >= 10)
+            {
+                Pumpkin.SetActive(true);
+            }
+            if (Level == 4 && CandyCount >= 10)
+            {
+                Pumpkin.SetActive(true);
+            }
+            if (Level == 5 && CandyCount >= 10)
             {
                 Pumpkin.SetActive(true);
             }
