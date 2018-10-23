@@ -8,6 +8,7 @@ TagManager:
   - Pumpkin
   - Enemy
   - Web
+  - HealthPack
   layers:
   - Default
   - TransparentFX

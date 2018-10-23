@@ -19,15 +19,15 @@ public class Candies : MonoBehaviour {
 	void Update () {
         if(Level == 1)
         {
-            CandyCounter.text = CandyCount + "/10";
+            CandyCounter.text = CandyCount + "/43";
         }
         if (Level == 2)
         {
-            CandyCounter.text = CandyCount + "/10";
+            CandyCounter.text = CandyCount + "/46";
         }
         if (Level == 3)
         {
-            CandyCounter.text = CandyCount + "/10";
+            CandyCounter.text = CandyCount + "/9";
         }
         if (Level == 4)
         {
@@ -45,15 +45,15 @@ public class Candies : MonoBehaviour {
         {
             CandyCount++;
             Destroy(collision.gameObject);
-            if(Level == 1 && CandyCount >= 10)
+            if(Level == 1 && CandyCount >= 43)
             {
                 Pumpkin.SetActive(true);
             }
-            if (Level == 2 && CandyCount >= 10)
+            if (Level == 2 && CandyCount >= 46)
             {
                 Pumpkin.SetActive(true);
             }
-            if (Level == 3 && CandyCount >= 10)
+            if (Level == 3 && CandyCount >= 9)
             {
                 Pumpkin.SetActive(true);
             }

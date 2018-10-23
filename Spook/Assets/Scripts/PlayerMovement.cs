@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour {
     public float Speed = 10f;
 	// Use this for initialization
 	void Start () {
-		
+        Speed = 10;
 	}
 	
 	// Update is called once per frame
@@ -22,10 +22,6 @@ public class PlayerMovement : MonoBehaviour {
         if(collision.gameObject.tag == "Web")
         {
             Speed = 4;
-        }
-        if (collision.gameObject.tag == "Enemy")
-        {
-            Speed = 6;
         }
     }
 

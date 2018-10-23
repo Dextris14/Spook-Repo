@@ -29,7 +29,7 @@ public class EnemyMovement : MonoBehaviour {
         }
         if (Type == 4)
         {
-            moveSpeed = 7;
+            moveSpeed = 8;
             Damage = 3;
         }
         if (Type == 5)

@@ -19,7 +19,9 @@ public class PlayerHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Health <=0)
+        HealthVisual.GetComponent<Text>().text = Health + "%";
+        HealthBar.GetComponent<Slider>().value = Health;
+        if (Health <=0)
         {
             if(Level == 1)
             {
@@ -60,9 +62,6 @@ public class PlayerHealth : MonoBehaviour {
         {
             Health -= 1;
         }
-
-        HealthVisual.GetComponent<Text>().text = Health + "%";
-        HealthBar.GetComponent<Slider>().value = Health;
 	}
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -77,11 +76,20 @@ public class PlayerHealth : MonoBehaviour {
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "HealthPack")
+        {
+            Health += 25;
+            Destroy(collision.gameObject);
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Health = Health - 5;
+            Health = Health - 3;
         }
     }
 }
